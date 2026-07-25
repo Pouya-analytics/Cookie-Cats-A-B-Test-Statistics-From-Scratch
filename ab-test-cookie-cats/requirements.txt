@@ -1,0 +1,13 @@
+scipy>=1.11.0
+numpy>=1.24.0
+statsmodels>=0.14.0
+pytest>=8.0.0
+
+# Note: scipy is used ONLY for two things in this project:
+#   1. Looking up p-values from known distributions (t, chi-square,
+#      normal CDFs) in manual_stats.py -- the test statistics
+#      themselves are computed by hand from the underlying formulas.
+#   2. Cross-validating those manual implementations against
+#      scipy.stats.ttest_ind / chi2_contingency in test_manual_stats.py.
+# numpy/statsmodels are used only in the test file, as independent
+# cross-checks -- never in the analysis logic itself.
